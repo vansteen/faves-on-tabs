@@ -1,0 +1,62 @@
+body {
+    font: caption;
+    font-size: 15px;
+    font-weight: normal;
+    cursor: default;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 16px 0;
+}
+
+.container {
+    padding-top: 16px;
+}
+
+form {
+    padding: 0;
+    border-bottom: 1px solid rgba(12, 12, 13, 0.3);
+
+}
+
+.element {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px dotted #ddd;
+}
+
+.element:last-child {
+    border-bottom: 0px
+}
+
+.element:first-child {
+    padding-top: 0;
+}
+
+.label {
+    width: 40%;
+}
+
+label {
+    font-weight: 600;
+}
+
+label > span {
+    font-weight: normal;
+}
+
+.field {
+    width: 50%;
+    padding-right: 2px;
+    text-align: right;
+}
+
+.text {
+    width: 100%;
+}
+
+.credits li {
+    margin: 1rem 0;
+}

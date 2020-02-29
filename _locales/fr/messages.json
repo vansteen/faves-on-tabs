@@ -1,0 +1,22 @@
+{
+    "extensionName": {
+        "message": "Favoris sur Onglet",
+        "description": "Nom de l'extension."
+    },
+    "extensionDescription": {
+        "message": "Affiche une selection de marque-pages lors de l'ouverture d'un nouvel onglet.",
+        "description": "Description de l'extension."
+    },
+    "defaultFolder": {
+        "message": "FavorisSurOnglet",
+        "description": "Répertoire par défaut."
+    },
+    "defaultTitle": {
+        "message": "Vos Favoris",
+        "description": "Titre par défaut pour un nouvel onglet."
+    },
+    "defaultIntroduction": {
+        "message": "Voici les liens extrait du répertoire de marque-pages intitulé 'Faves On Tabs'.",
+        "description": "Phrase d'introduction par défaut."
+    }
+}

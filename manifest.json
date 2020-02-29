@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "__MSG_extensionName__",
+    "description": "__MSG_extensionDescription__",
+    "version": "1.0",
+    "background": {
+        "scripts": [
+            "background/offboarding.js",
+            "background/onboarding.js",
+            "background/upboarding.js"
+        ]
+    },
+    "chrome_url_overrides": {
+        "newtab": "pages/newtab.html"
+    },
+    "chrome_settings_overrides": {
+        "homepage": "http://www.homepage.com"
+    },
+    "default_locale": "en",
+    "developer": {
+        "name": "Thomas Van Steen.",
+        "url": "https://www.1234.pm"
+    },
+    "icons": {
+        "50": "icons/50.png",
+        "100": "icons/100.png"
+    },
+    "options_ui": {
+        "page": "options/preferences.html",
+        "browser_style": true,
+        "chrome_style": true
+    },
+    "permissions": [
+        "bookmarks",
+        "storage"
+    ]
+}

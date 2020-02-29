@@ -1,0 +1,23 @@
+html {
+    background-color: #f9f9fa;
+}
+
+body {
+    font: caption;
+    font-size: 15px;
+    font-weight: normal;
+    background-color: #f9f9fa;
+    cursor: default;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 1rem;
+}
+
+.release {
+    padding-bottom: 1rem;
+}

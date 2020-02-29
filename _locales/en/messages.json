@@ -1,0 +1,22 @@
+{
+    "extensionName": {
+        "message": "Faves on Tabs",
+        "description": "Name of the extension."
+    },
+    "extensionDescription": {
+        "message": "Displays your favorite bookmarks when you open a new Tab Page.",
+        "description": "Description of the extension."
+    },
+    "defaultFolder": {
+        "message": "FavesOnTabs",
+        "description": "The folder in which the favorite bookmarks are stored."
+    },
+    "defaultTitle": {
+        "message": "Your Favorites",
+        "description": "Default the title for the list of favorites."
+    },
+    "defaultIntroduction": {
+        "message": "Here are the links from the bookmark folder 'Faves On Tabs'.",
+        "description": "Default introduction for the list of favorites."
+    }
+}
