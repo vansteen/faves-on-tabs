@@ -12,7 +12,7 @@
         "description": "Répertoire par défaut."
     },
     "defaultTitle": {
-        "message": "Vos Favoris",
+        "message": "Mes Favoris",
         "description": "Titre par défaut pour un nouvel onglet."
     },
     "defaultIntroduction": {

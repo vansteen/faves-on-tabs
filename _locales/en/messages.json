@@ -12,7 +12,7 @@
         "description": "The folder in which the favorite bookmarks are stored."
     },
     "defaultTitle": {
-        "message": "Your Favorites",
+        "message": "My Favorites",
         "description": "Default the title for the list of favorites."
     },
     "defaultIntroduction": {

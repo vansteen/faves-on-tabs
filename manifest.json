@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "__MSG_extensionName__",
     "description": "__MSG_extensionDescription__",
-    "version": "1.0",
+    "version": "1.1",
     "background": {
         "scripts": [
             "background/offboarding.js",
@@ -13,14 +13,11 @@
     "chrome_url_overrides": {
         "newtab": "pages/newtab.html"
     },
-    "chrome_settings_overrides": {
-        "homepage": "http://www.homepage.com"
-    },
     "default_locale": "en",
     "developer": {
-        "name": "Thomas Van Steen.",
-        "url": "https://www.1234.pm"
+        "name": "Thomas Van Steenwinckel"
     },
+    "homepage_url": "https://www.1234.pm/favesontabs/",
     "icons": {
         "50": "icons/50.png",
         "100": "icons/100.png"
