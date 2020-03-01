@@ -21,7 +21,7 @@ function setOptions(result) {
     if (result.options) {
         document.getElementById('folder').value = result.options.folder;
         document.getElementById('title').value = result.options.title;
-        document.getElementById('introduction').innerHTML = result.options.introduction;
+        document.getElementById('introduction').textContent = result.options.introduction;
         document.querySelector('#show-favicon-' + result.options.showFavicon).checked = result.options.showFavicon;
         document.querySelector('#show-url-' + result.options.showUrl).checked = result.options.showUrl;
     }

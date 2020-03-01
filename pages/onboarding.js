@@ -6,8 +6,8 @@ function onRejected(error) {
 
 function buildPage() {
     let extensionName = browser.i18n.getMessage("extensionName");
-    document.querySelector('title').innerHTML = extensionName;
-    document.querySelector('#title').innerHTML = extensionName;
+    document.querySelector('title').textContent = extensionName;
+    document.querySelector('#title').textContent = extensionName;
 }
 
 function init(res) {

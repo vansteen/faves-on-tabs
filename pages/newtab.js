@@ -9,9 +9,9 @@ function buildPage() {
     let title = options.title;
     let introduction = options.introduction;
 
-    document.querySelector('title').innerHTML = title;  // Page title
-    document.getElementById('title').innerHTML = title; // H1
-    document.getElementById('introduction').innerHTML = introduction;  // Introduction sentence
+    document.querySelector('title').textContent = title;  // Page title
+    document.getElementById('title').textContent = title; // H1
+    document.getElementById('introduction').textContent = introduction;  // Introduction sentence
 }
 
 /*
@@ -72,11 +72,11 @@ function appendToList(item) {
 
     const elemA = document.createElement("div");
     elemA.setAttribute("class", "title");
-    elemA.innerHTML = item.title;
+    elemA.textContent = item.title;
 
     const elemP = document.createElement("div");
     elemP.setAttribute("class", "url");
-    elemP.innerHTML = item.url;
+    elemP.textContent = item.url;
 
     elemContent.append(elemA);
 
