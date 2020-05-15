@@ -16,7 +16,7 @@
         "description": "Titre par défaut pour un nouvel onglet."
     },
     "defaultIntroduction": {
-        "message": "Voici les liens extrait du répertoire de marque-pages intitulé 'Faves On Tabs'.",
+        "message": "Voici les liens extrait du répertoire de marque-pages intitulé 'FavorisSurOnglet'.",
         "description": "Phrase d'introduction par défaut."
     }
 }

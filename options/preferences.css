@@ -43,7 +43,7 @@ label {
     font-weight: 600;
 }
 
-label > span {
+label>span {
     font-weight: normal;
 }
 

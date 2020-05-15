@@ -53,18 +53,17 @@ body {
     width: 100%;
 }
 
-
 /* Small (sm) */
 
 @media (min-width: 640px) {
     .container {
         padding: 3rem;
     }
+
     .container .list li {
         width: 100%;
     }
 }
-
 
 /* Medium (md) */
 
@@ -72,11 +71,11 @@ body {
     .container {
         padding: 3rem;
     }
+
     .container .list li {
         width: 50%;
     }
 }
-
 
 /* Large (lg) */
 
@@ -84,11 +83,11 @@ body {
     .container {
         padding: 4rem;
     }
+
     .container .list li {
         width: calc(100% / 3);
     }
 }
-
 
 /* Extra Large (xl) */
 
@@ -96,6 +95,7 @@ body {
     .container {
         padding: 4rem;
     }
+
     .container .list li {
         width: calc(100% / 4);
         max-width: 400px;

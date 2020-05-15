@@ -9,9 +9,7 @@ Then you simply need to add bookmarks to this folder to display the links each t
 
 *Firefox Add-on URL*: https://addons.mozilla.org/en-US/firefox/addon/faves-on-tabs/
 
-
-
-### About the development
+## About the development
 
 web-ext is the command line tool designed to speed up various parts of the extension development process, making development faster and easier.
 

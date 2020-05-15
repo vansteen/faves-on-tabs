@@ -8,13 +8,11 @@ async function handleInstalled(details) {
         let defaultTitle = browser.i18n.getMessage("defaultTitle");
         let defaultIntroduction = browser.i18n.getMessage("defaultIntroduction");
 
-
         // Create the bookmark folder
         let createBookmark = browser.bookmarks.create({
             parentId: "menu________",
             title: defaultFolder
         });
-
 
         // Set the default options on installation.
         browser.storage.local.set({

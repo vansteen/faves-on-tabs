@@ -1,110 +1,109 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="preferences.css" />
-</head>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="preferences.css" />
+    </head>
 
-<body>
-    <div class="container">
-        <form>
-            <div class="element">
-                <div class="label">
-                    <label for="folder">Bookmarks folder</label>
-                    <p>
-                        The folder in which your favorite bookmarks are stored.
-                    </p>
+    <body>
+        <div class="container">
+            <form>
+                <div class="element">
+                    <div class="label">
+                        <label for="folder">Bookmarks folder</label>
+                        <p>
+                            The folder in which your favorite bookmarks are stored.
+                        </p>
+                    </div>
+                    <div class="field browser-style">
+                        <input class="text" type="text" id="folder" name="folder" value="">
+                    </div>
                 </div>
-                <div class="field browser-style">
-                    <input class="text" type="text" id="folder" name="folder" value="">
+                <div class="element">
+                    <div class="label">
+                        <label for="title">Title</label>
+                        <p>
+                            The title for the list of favorites.
+                        </p>
+                    </div>
+                    <div class="field browser-style">
+                        <input class="text" type="text" id="title" name="title" value="">
+                    </div>
                 </div>
-            </div>
-            <div class="element">
-                <div class="label">
-                    <label for="title">Title</label>
-                    <p>
-                        The title for the list of favorites.
-                    </p>
+                <div class="element">
+                    <div class="label">
+                        <label for="introduction">Introduction</label>
+                        <p>
+                            The introduction for the list of favorites.
+                        </p>
+                    </div>
+                    <div class="field browser-style">
+                        <textarea class="text" id="introduction" name="introduction" rows="10"></textarea>
+                    </div>
                 </div>
-                <div class="field browser-style">
-                    <input class="text" type="text" id="title" name="title" value="">
+                <div class="element">
+                    <div class="label">
+                        <label for="show-favicon-true">Display favicons</label>
+                        <p>
+                            If yes, favicons will be loaded from Google's cache and displayed next to each favorite
+                            bookmark.
+                        </p>
+                    </div>
+                    <div class="field browser-style">
+                        <label>
+                            <input type="radio" id="show-favicon-true" name="show-favicon" value="true">
+                            <span>Yes</span>
+                        </label>
+                        <label>
+                            <input type="radio" id="show-favicon-false" name="show-favicon" value="false">
+                            <span>No</span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="element">
-                <div class="label">
-                    <label for="introduction">Introduction</label>
-                    <p>
-                        The introduction for the list of favorites.
-                    </p>
+                <div class="element">
+                    <div class="label">
+                        <label for="show-url-true">Display URLs</label>
+                        <p>
+                            If yes, URLs of the links will be displayed.
+                        </p>
+                    </div>
+                    <div class="field browser-style">
+                        <label>
+                            <input type="radio" id="show-url-true" name="show-url" value="true">
+                            <span>Yes</span>
+                        </label>
+                        <label>
+                            <input type="radio" id="show-url-false" name="show-url" value="false">
+                            <span>No</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="field browser-style">
-                    <textarea class="text" id="introduction" name="introduction" rows="10"></textarea>
+                <div class="element">
+                    <div></div>
+                    <div class="field">
+                        <label></label>
+                        <button type="submit" class="browser-style">Save preferences</button>
+                    </div>
                 </div>
-            </div>
-            <div class="element">
-                <div class="label">
-                    <label for="show-favicon-true">Display favicons</label>
-                    <p>
-                        If yes, favicons will be loaded from Google's cache and displayed next to each favorite
-                        bookmark.
-                    </p>
-                </div>
-                <div class="field browser-style">
-                    <label>
-                        <input type="radio" id="show-favicon-true" name="show-favicon" value="true">
-                        <span>Yes</span>
-                    </label>
-                    <label>
-                        <input type="radio" id="show-favicon-false" name="show-favicon" value="false">
-                        <span>No</span>
-                    </label>
-                </div>
-            </div>
-            <div class="element">
-                <div class="label">
-                    <label for="show-url-true">Display URLs</label>
-                    <p>
-                        If yes, URLs of the links will be displayed.
-                    </p>
-                </div>
-                <div class="field browser-style">
-                    <label>
-                        <input type="radio" id="show-url-true" name="show-url" value="true">
-                        <span>Yes</span>
-                    </label>
-                    <label>
-                        <input type="radio" id="show-url-false" name="show-url" value="false">
-                        <span>No</span>
-                    </label>
-                </div>
-            </div>
-            <div class="element">
-                <div></div>
-                <div class="field">
-                    <label></label>
-                    <button type="submit" class="browser-style">Save preferences</button>
-                </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
-    <div class="container">
-        <label>Credits :</label>
-        <ul class="credits">
-            <li>
-                <a target="_blank" href="https://icons8.com/icons/set/window-favorite">Window Favorite icon</a>
-                by
-                <a target="_blank" href="https://icons8.com">Icons8</a>
-            </li>
-            <li>
-                Inspired by kyamuise's extension <a target="_blank"
-                    href="https://addons.mozilla.org/ja/firefox/addon/new-tab-bookmark/">New Tab Bookmarks</a>
-            </li>
-        </ul>
-    </div>
+        <div class="container">
+            <label>Credits :</label>
+            <ul class="credits">
+                <li>
+                    <a target="_blank" href="https://icons8.com/icons/set/window-favorite">Window Favorite icon</a>
+                    by
+                    <a target="_blank" href="https://icons8.com">Icons8</a>
+                </li>
+                <li>
+                    Inspired by kyamuise's extension <a target="_blank" href="https://addons.mozilla.org/ja/firefox/addon/new-tab-bookmark/">New Tab Bookmarks</a>
+                </li>
+            </ul>
+        </div>
 
-    <script src="preferences.js"></script>
-</body>
+        <script src="preferences.js"></script>
+    </body>
 
 </html>

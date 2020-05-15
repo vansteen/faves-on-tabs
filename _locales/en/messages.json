@@ -16,7 +16,7 @@
         "description": "Default the title for the list of favorites."
     },
     "defaultIntroduction": {
-        "message": "Here are the links from the bookmark folder 'Faves On Tabs'.",
+        "message": "Here are the links from the bookmark folder 'FavesOnTabs'.",
         "description": "Default introduction for the list of favorites."
     }
 }
