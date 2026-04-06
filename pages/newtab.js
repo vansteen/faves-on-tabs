@@ -28,13 +28,13 @@ function parseTree(bookmarkTree) {
  * Recursively find the folders
  */
 function findFolders(bookmarkItem) {
-    if (bookmarkItem.type == 'folder') {
-        if ((bookmarkItem.parentId == 'menu________') && (bookmarkItem.title == options.folder)) {
+    if (bookmarkItem.type === 'folder') {
+        if ((bookmarkItem.parentId === 'menu________') && (bookmarkItem.title === options.folder)) {
             folders.push(bookmarkItem.id);
         }
     }
     if (bookmarkItem.children) {
-        for (child of bookmarkItem.children) {
+        for (const child of bookmarkItem.children) {
             findFolders(child);
         }
     }
@@ -45,13 +45,13 @@ function findFolders(bookmarkItem) {
  */
 function findBookmarks(bookmarkItem, folders) {
 
-    if (bookmarkItem.type == 'bookmark') {
-        if (folders.indexOf(bookmarkItem.parentId) >= 0) {
+    if (bookmarkItem.type === 'bookmark') {
+        if (folders.includes(bookmarkItem.parentId)) {
             appendToList(bookmarkItem);
         }
     }
     if (bookmarkItem.children) {
-        for (child of bookmarkItem.children) {
+        for (const child of bookmarkItem.children) {
             findBookmarks(child, folders);
         }
     }
