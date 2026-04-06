@@ -1,6 +1,6 @@
 
 async function handleUpdated(details) {
-    if (details.reason == "update") {
+    if (details.reason === "update") {
         const url = browser.runtime.getURL("pages/upboarding.html");
         await browser.tabs.create({ url });
     }
