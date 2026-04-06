@@ -3,8 +3,6 @@ function onError(error) {
 }
 
 function saveOptions(e) {
-    console.log('saveOptions');
-    console.log(document.querySelector('#folder').value);
     browser.storage.local.set({
         options: {
             folder: document.getElementById('folder').value,
@@ -21,7 +19,7 @@ function setOptions(result) {
     if (result.options) {
         document.getElementById('folder').value = result.options.folder;
         document.getElementById('title').value = result.options.title;
-        document.getElementById('introduction').textContent = result.options.introduction;
+        document.getElementById('introduction').value = result.options.introduction;
         document.querySelector('#show-favicon-' + result.options.showFavicon).checked = result.options.showFavicon;
         document.querySelector('#show-url-' + result.options.showUrl).checked = result.options.showUrl;
     }
