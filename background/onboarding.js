@@ -1,7 +1,7 @@
 
 
 async function handleInstalled(details) {
-    if (details.reason == "install") {
+    if (details.reason === "install") {
 
         // Default options
         let defaultFolder = browser.i18n.getMessage("defaultFolder");
@@ -9,13 +9,13 @@ async function handleInstalled(details) {
         let defaultIntroduction = browser.i18n.getMessage("defaultIntroduction");
 
         // Create the bookmark folder
-        let createBookmark = browser.bookmarks.create({
+        await browser.bookmarks.create({
             parentId: "menu________",
             title: defaultFolder
         });
 
         // Set the default options on installation.
-        browser.storage.local.set({
+        await browser.storage.local.set({
             options: {
                 folder: defaultFolder,
                 title: defaultTitle,
@@ -30,7 +30,7 @@ async function handleInstalled(details) {
 
         // Page
         let file = "pages/onboarding.en.html";
-        if (language == 'fr') {
+        if (language === 'fr') {
             file = "pages/onboarding.fr.html";
         }
 
