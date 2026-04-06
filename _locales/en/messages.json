@@ -18,5 +18,9 @@
     "defaultIntroduction": {
         "message": "Here are the links from the bookmark folder 'FavesOnTabs'.",
         "description": "Default introduction for the list of favorites."
+    },
+    "groupOthers": {
+        "message": "Others",
+        "description": "Label for the group containing bookmarks not in any subfolder."
     }
 }

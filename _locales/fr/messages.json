@@ -18,5 +18,9 @@
     "defaultIntroduction": {
         "message": "Voici les liens extrait du répertoire de marque-pages intitulé 'FavorisSurOnglet'.",
         "description": "Phrase d'introduction par défaut."
+    },
+    "groupOthers": {
+        "message": "Autres",
+        "description": "Libellé du groupe contenant les favoris sans sous-dossier."
     }
 }

@@ -6,113 +6,139 @@ function onRejected(error) {
  * Build the New Tab web page
  */
 function buildPage() {
-    let title = options.title;
-    let introduction = options.introduction;
-
-    document.querySelector('title').textContent = title;  // Page title
-    document.getElementById('title').textContent = title; // H1
-    document.getElementById('introduction').textContent = introduction;  // Introduction sentence
+    document.querySelector('title').textContent = options.title;
+    document.getElementById('title').textContent = options.title;
+    document.getElementById('introduction').textContent = options.introduction;
 }
 
 /*
- * Parse the Bookmark tree
+ * Find the configured root folder node in the bookmark tree
  */
-function parseTree(bookmarkTree) {
-    findFolders(bookmarkTree[0]);
-    if (folders.length > 0) {
-        findBookmarks(bookmarkTree[0], folders);
-    }
-}
-
-/*
- * Recursively find the folders
- */
-function findFolders(bookmarkItem) {
-    if (bookmarkItem.type === 'folder') {
-        if ((bookmarkItem.parentId === 'menu________') && (bookmarkItem.title === options.folder)) {
-            folders.push(bookmarkItem.id);
-        }
+function findRootFolder(bookmarkItem) {
+    if (bookmarkItem.type === 'folder' &&
+        bookmarkItem.parentId === 'menu________' &&
+        bookmarkItem.title === options.folder) {
+        return bookmarkItem;
     }
     if (bookmarkItem.children) {
         for (const child of bookmarkItem.children) {
-            findFolders(child);
+            const found = findRootFolder(child);
+            if (found) return found;
         }
     }
+    return null;
 }
 
 /*
- * Recursively find the bookmarks
+ * Build a single bookmark card element
  */
-function findBookmarks(bookmarkItem, folders) {
-
-    if (bookmarkItem.type === 'bookmark') {
-        if (folders.includes(bookmarkItem.parentId)) {
-            appendToList(bookmarkItem);
-        }
-    }
-    if (bookmarkItem.children) {
-        for (const child of bookmarkItem.children) {
-            findBookmarks(child, folders);
-        }
-    }
-}
-
-/*
- * Build the bookmark list
- */
-function appendToList(item) {
+function createCard(item) {
     const elemLi = document.createElement("li");
 
     const elemCard = document.createElement("a");
-    elemCard.setAttribute("class", "card");
-    elemCard.setAttribute("href", item.url);
+    elemCard.className = "card";
+    elemCard.href = item.url;
 
     const elemContent = document.createElement("div");
-    elemContent.setAttribute("class", "content");
+    elemContent.className = "content";
 
-    const elemA = document.createElement("div");
-    elemA.setAttribute("class", "title");
-    elemA.textContent = item.title;
+    const elemTitle = document.createElement("div");
+    elemTitle.className = "title";
+    elemTitle.textContent = item.title;
 
-    const elemP = document.createElement("div");
-    elemP.setAttribute("class", "url");
-    elemP.textContent = item.url;
+    const elemUrl = document.createElement("div");
+    elemUrl.className = "url";
+    elemUrl.textContent = item.url;
 
-    elemContent.append(elemA);
+    elemContent.append(elemTitle);
 
     if (options.showUrl === "true") {
-        elemContent.append(elemP);
+        elemContent.append(elemUrl);
     }
 
     if (options.showFavicon === "true") {
         const elemImg = document.createElement("img");
-        const faviconUrl = "https://www.google.com/s2/favicons?domain_url=" + item.url;
-        elemImg.setAttribute("src", faviconUrl);
-
+        elemImg.src = "https://www.google.com/s2/favicons?domain_url=" + item.url;
         elemCard.append(elemImg);
     }
 
     elemCard.append(elemContent);
     elemLi.append(elemCard);
+    return elemLi;
+}
 
-    document.querySelector("#favorites").appendChild(elemLi);
+/*
+ * Build a group section for a subfolder
+ */
+function createGroup(folder) {
+    const bookmarks = (folder.children || []).filter(c => c.type === 'bookmark');
+    if (bookmarks.length === 0) return null;
+
+    const section = document.createElement("section");
+    section.className = "group";
+
+    const heading = document.createElement("h2");
+    heading.className = "group-title";
+    heading.textContent = folder.title;
+
+    const ul = document.createElement("ul");
+    ul.className = "group-list";
+
+    for (const item of bookmarks) {
+        ul.append(createCard(item));
+    }
+
+    section.append(heading);
+    section.append(ul);
+    return section;
+}
+
+/*
+ * Render the root folder contents into #favorites.
+ * Direct bookmark children are shown as a flat list.
+ * Subfolder children are each rendered as a titled group box.
+ */
+function renderFavorites(rootFolder) {
+    const container = document.getElementById("favorites");
+    const children = rootFolder.children || [];
+
+    const directBookmarks = children.filter(c => c.type === 'bookmark');
+    const subfolders = children.filter(c => c.type === 'folder');
+
+    if (subfolders.length > 0) {
+        for (const folder of subfolders) {
+            const group = createGroup(folder);
+            if (group) container.append(group);
+        }
+
+        if (directBookmarks.length > 0) {
+            const othersFolder = { title: browser.i18n.getMessage("groupOthers") || "Others", children: directBookmarks };
+            const group = createGroup(othersFolder);
+            if (group) container.append(group);
+        }
+    } else {
+        const ul = document.createElement("ul");
+        ul.className = "group-list";
+        for (const item of directBookmarks) {
+            ul.append(createCard(item));
+        }
+        container.append(ul);
+    }
+}
+
+function parseTree(bookmarkTree) {
+    const rootFolder = findRootFolder(bookmarkTree[0]);
+    if (rootFolder) {
+        renderFavorites(rootFolder);
+    }
 }
 
 function init(res) {
     options = res.options || {};
-
     buildPage();
-
-    browser.bookmarks.getTree()
-        .then(parseTree, onRejected);
+    browser.bookmarks.getTree().then(parseTree, onRejected);
 }
 
 let options = {};
-let folders = [];
 
-/**
- * When the script loads, get the options, then init.
- * If we couldn't inject the script, handle the error.
- */
-browser.storage.local.get("options")
-    .then(init, onRejected)
+browser.storage.local.get("options").then(init, onRejected);
