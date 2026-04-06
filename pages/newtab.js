@@ -9,6 +9,20 @@ function buildPage() {
     document.querySelector('title').textContent = options.title;
     document.getElementById('title').textContent = options.title;
     document.getElementById('introduction').textContent = options.introduction;
+
+    const scale = parseFloat(options.fontSize) || 100;
+    document.documentElement.style.setProperty('--font-scale', scale / 100);
+
+    document.getElementById('font-increase').addEventListener('click', () => changeFontSize(10));
+    document.getElementById('font-decrease').addEventListener('click', () => changeFontSize(-10));
+}
+
+function changeFontSize(delta) {
+    const current = parseFloat(options.fontSize) || 100;
+    const next = Math.min(150, Math.max(70, current + delta));
+    options.fontSize = String(next);
+    document.documentElement.style.setProperty('--font-scale', next / 100);
+    browser.storage.local.set({ options });
 }
 
 /*

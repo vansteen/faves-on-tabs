@@ -70,23 +70,5 @@ The output is placed in `web-ext-artifacts/`. You can load it manually in Firefo
 2. Find **Faves on Tabs** under "Temporary Extensions" (after `web-ext run`) or "Installed Extensions"
 3. Click **Inspect** to open a dedicated DevTools window for the extension
 
-**New Tab page**
 
-The new tab page (`pages/newtab.html`) runs in a privileged context. Right-click anywhere on a new tab → **Inspect Element** opens DevTools scoped to that page. The Console, Sources, and Network tabs all work normally.
-
-**Background scripts**
-
-Background scripts (`background/*.js`) do not have a visible page. Inspect them via:
-- `about:debugging` → **Inspect** next to the extension → switch to the **Console** tab
-
-**Storage**
-
-Inspect the current saved options from the background script console:
-
-    browser.storage.local.get("options").then(console.log)
-
-**Temporary vs permanent install**
-
-- `web-ext run` → temporary install, cleared when Firefox closes, no ID assigned
-- Install from AMO or a signed `.xpi` → permanent install, survives restarts
 

@@ -22,5 +22,13 @@
     "groupOthers": {
         "message": "Autres",
         "description": "Libellé du groupe contenant les favoris sans sous-dossier."
+    },
+    "fontSizeLabel": {
+        "message": "Taille de police",
+        "description": "Libellé pour le paramètre de taille de police."
+    },
+    "fontSizeDescription": {
+        "message": "Ajustez la taille du texte sur la page de nouvel onglet.",
+        "description": "Description du paramètre de taille de police."
     }
 }

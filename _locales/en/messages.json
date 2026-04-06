@@ -22,5 +22,13 @@
     "groupOthers": {
         "message": "Others",
         "description": "Label for the group containing bookmarks not in any subfolder."
+    },
+    "fontSizeLabel": {
+        "message": "Font size",
+        "description": "Label for the font size preference."
+    },
+    "fontSizeDescription": {
+        "message": "Adjust the size of the text on the new tab page.",
+        "description": "Description for the font size preference."
     }
 }

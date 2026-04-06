@@ -22,6 +22,7 @@ async function handleInstalled(details) {
                 introduction: defaultIntroduction,
                 showFavicon: "true",
                 showUrl: "false",
+                fontSize: "100",
             }
         });
 
