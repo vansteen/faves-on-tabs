@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="upboarding.css" />
-        <title></title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="upboarding.css" />
+    <title></title>
+</head>
 
-    <body>
+<body>
 
-        <div class="container">
-            <h1 id="title">Favorites</h1>
-            <h2 id="version">Release Notes</h2>
-            <hr />
+    <div class="container">
+        <h1 id="title">Favorites</h1>
+        <h2 id="version">Release Notes</h2>
+        <hr />
 
-            <div class="release">
-                <h3>v1.0</h3>
-                <p>Initial release.</p>
-            </div>
-
+        <div class="release">
+            <h3>v1.2</h3>
+            <ul>
+                <li><strong>Bookmark groups</strong> — bookmarks in the configured folder are now organized into groups
+                    when subfolders are present. Each subfolder renders as a titled section on the new tab page. Direct
+                    bookmarks not in any subfolder are collected into an "Others" group at the end. When no subfolders
+                    exist, the flat list layout is unchanged.</li>
+                <li><strong>Font size controls</strong> — adjust the font size directly on the new tab page using the A−
+                    and A+ buttons in the header. The preference is saved and applied immediately. The same setting is
+                    also available in the preferences page via a slider (70%–150%).</li>
+                <li>Various small bug fixes and visual improvements.</li>
+            </ul>
         </div>
 
-        <script src="upboarding.js"></script>
-    </body>
+        <div class="release">
+            <h3>v1.0</h3>
+            <p>Initial release.</p>
+        </div>
+
+    </div>
+
+    <script src="upboarding.js"></script>
+</body>
 
 </html>
