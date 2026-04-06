@@ -80,11 +80,11 @@ function appendToList(item) {
 
     elemContent.append(elemA);
 
-    if (options.showUrl == "true") {
+    if (options.showUrl === "true") {
         elemContent.append(elemP);
     }
 
-    if (options.showFavicon == "true") {
+    if (options.showFavicon === "true") {
         const elemImg = document.createElement("img");
         const faviconUrl = "https://www.google.com/s2/favicons?domain_url=" + item.url;
         elemImg.setAttribute("src", faviconUrl);
